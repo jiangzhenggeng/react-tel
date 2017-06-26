@@ -1,0 +1,94 @@
+
+git配置
+配置.gitignore
+
+npm仓库配置
+配置.npmrc
+
+代码风格配置
+配置.editorconfig
+
+代码质量检查配置
+配置.eslintrc
+安装相关依赖 yarn add --dev babel-eslint eslint eslint-config-airbnb-base eslint-plugin-import eslint-plugin-react pre-commit
+在WebStorm中配置eslint, 并将IDE的javascript质量检查都关闭
+在package.json中配置提交检查
+
+开发环境配置
+安装webpack及相关依赖项 yarn add --dev webpack webpack-dev-server json-loader file-loader url-loader style-loader css-loader less less-loader postcss postcss-cssnext postcss-import postcss-loader precss
+配置webpack
+配置webpack-dev-server
+安装webpack提取文件内容插件 yarn add --dev extract-text-webpack-plugin
+安装webpack视图html文件注入插件 yarn add --dev html-webpack-plugin
+安装node环境变量注入 yarn add --dev cross-env
+之后就可以在执行nodejs脚本时自由改变环境变量cross-env NODE_ENV=development node ./script.js
+安装ip依赖包 yarn add --dev ip
+安装open依赖包 yarn add --dev open
+安装log-update依赖包 yarn add --dev log-update
+安装numeral依赖包 yarn add --dev numeral
+
+代码编译配置
+安装babel及相关依赖 yarn add --dev babel-core babel-loader babel-polyfill babel-preset-es2015 babel-preset-react babel-preset-stage-0 babel-register babel-runtime
+配置.babelrc
+{
+    "presets": [
+        "es2015",
+        "react",    // 只有react项目才需要
+        "stage-0"
+    ],
+    "plugins": []
+}
+
+
+
+
+
+
+目录结构
+
+├── ...
+├── build                   # 编译后的文件存入的目录
+├── mock                    # 服务端模拟数据的目录
+├── src                     # 所有组件所在的文件夹
+│   ├── action              # redux -> action目录
+│   ├── api                 # 服务端api目录
+│   ├── component           # 业务组件目录
+│   ├── constant            # 项目常量配置目录
+│   ├── container           # redux -> container目录
+│   ├── error               # 自定义错误类目录
+│   ├── images              # 图片存放目录
+│   ├── main                # 项目入口目录
+│   ├── pcss                # pcss样式目录
+│   ├── reducer             # redux -> reducer目录
+│   ├── route               # route目录
+│   ├── view                # 项目视图目录
+│   ├── util                # 项目工具类目录
+│   │
+│   └── ...其他组件
+└── ...
+
+
+模板示例
+变更日志
+文档
+react环境配置
+安装react及相关依赖 yarn add --dev react react-dom react-hot-loader@3.0.0-beta.6
+react-hot-loader@3.0版本还没有正式发布，需要手动指定版本号
+配置react
+redux环境配置
+安装react及相关依赖 yarn add --dev redux redux-devtools redux-logger redux-thunk react-redux
+配置redux
+router环境配置
+安装react及相关依赖 yarn add --dev react-router react-router-redux
+配置router
+其他依赖
+安装cookie依赖 yarn add --dev js-cookie
+安装fetch依赖 yarn add --dev isomorphic-fetch
+支持在浏览器和node二端使用同样的api
+安装国际化依赖 yarn add --dev i18n
+安装fetch mock yarn add --dev fetch-mock
+自定义封装
+封装自定义错误
+封装fetch
+
+
